@@ -1,31 +1,46 @@
 // This defines all syntax variables that syntax themes must implement when they
 // include a syntax-variables.less file.
+@import (reference) "colors";
 
 // General colors
-@syntax-text-color: #F1F1F1;
-@syntax-cursor-color: #F18260;
-@syntax-selection-color: rgba(255,255,255,0.25);
-@syntax-selection-flash-color: #F18260;
-@syntax-background-color: #282828;
+@syntax-text-color: @grey1;
+@syntax-cursor-color: @predawn;
+@syntax-selection-color: fade(white, 25%);
+@syntax-selection-flash-color: @predawn;
+@syntax-background-color: @grey7;
 
 // Guide colors
-@syntax-wrap-guide-color: #F18260;
-@syntax-indent-guide-color: rgba(241, 130, 96, 0.15);
-@syntax-invisible-character-color: rgba(241, 241, 241, 0.25);
+@syntax-wrap-guide-color: @predawn;
+@syntax-indent-guide-color: fade(@predawn, 15%);
+@syntax-invisible-character-color: fade(@grey1, 25%);
 
 // For find and replace markers
-@syntax-result-marker-color: #F18260;
-@syntax-result-marker-color-selected: #F1F1F1;
+@syntax-result-marker-color: @predawn;
+@syntax-result-marker-color-selected: @grey1;
 
 // Gutter colors
-@syntax-gutter-text-color: #F1F1F1;
-@syntax-gutter-text-color-selected: #F1F1F1;
-@syntax-gutter-background-color: #282828;
-@syntax-gutter-background-color-selected: #232323;
+@syntax-gutter-text-color: @grey1;
+@syntax-gutter-text-color-selected: @grey1;
+@syntax-gutter-background-color: @syntax-background-color;
+@syntax-gutter-background-color-selected: @grey9;
 
 // For git diff info. i.e. in the gutter
 // These are static and were not extracted from your textmate theme
-@syntax-color-renamed: #96CBFE;
-@syntax-color-added: #A8FF60;
-@syntax-color-modified: #E9C062;
-@syntax-color-removed: #CC6666;
+@syntax-color-renamed: @blue;
+@syntax-color-added: @green;
+@syntax-color-modified: @orange;
+@syntax-color-removed: @red;
+
+// For language entity colors
+@syntax-color-variable: @orange;
+@syntax-color-constant: @yellow;
+@syntax-color-property: @blue;
+@syntax-color-value: @yellow;
+@syntax-color-function: @yellow;
+@syntax-color-method: @syntax-color-function;
+@syntax-color-class: @green;
+@syntax-color-keyword: @orange;
+@syntax-color-tag: @green;
+@syntax-color-attribute: @yellow;
+@syntax-color-import: @syntax-color-keyword;
+@syntax-color-snippet: @syntax-color-constant;
